@@ -1,36 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+package com.example.flashcards;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity
+{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findViewById(R.id.answer1).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("1"))
+                    ((TextView) findViewById(R.id.answer1)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                else
+                    ((TextView) findViewById(R.id.answer1)).setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("2"))
+                    ((TextView) findViewById(R.id.answer2)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("3"))
+                    ((TextView) findViewById(R.id.answer3)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+            }
+        });
 
 
-    <TextView
-        android:id="@+id/flashcard_question"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:text="What was the longest wedding veil in the world?"
-        android:textAlignment="center"
-        android:textColor="#0F0F0F"
-        android:textSize="40sp" />
+        findViewById(R.id.answer2).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("1"))
+                    ((TextView) findViewById(R.id.answer1)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
-    <TextView
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="223dp"
-        android:text="22,843 feet"
-        android:textColor="#0E0D0D"
-        android:textSize="40sp"
-        android:visibility="invisible" />
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("2"))
+                    ((TextView) findViewById(R.id.answer2)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                else
+                    ((TextView) findViewById(R.id.answer2)).setBackgroundColor(getResources().getColor(R.color.colorAccent));
 
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("3"))
+                    ((TextView) findViewById(R.id.answer3)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
-</RelativeLayout>
+            }
+        });
+        findViewById(R.id.answer3).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("1"))
+                    ((TextView) findViewById(R.id.answer1)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("2"))
+                    ((TextView) findViewById(R.id.answer2)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+                if(((TextView)findViewById(R.id.flashcard_question)).getTag().equals("3"))
+                    ((TextView) findViewById(R.id.answer3)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                else
+                    ((TextView) findViewById(R.id.answer3)).setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+            }
+        });
+    }
+
+}
